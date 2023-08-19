@@ -54,7 +54,7 @@ def main():
         for moment in key_moments.split('\n'):
             st.markdown(
                 f"<p style='margin-bottom: 5px;'>{moment}</p>", unsafe_allow_html=True)
-        
+
         st.subheader("Key Topics")
         st.write(podcast_info["podcast_highlights_topics"])
 
@@ -93,11 +93,11 @@ def main():
 
         with col3:
             st.subheader("Podcast Guest")
-            st.write(podcast_info['podcast_guest']['name'])
+            st.write(podcast_info['podcast_guest_summary'])
 
         with col4:
-            st.subheader("Podcast Guest Details")
-            st.write(podcast_info["podcast_guest"]['summary'])
+            st.subheader("Podcast Guest Extra Details")
+            st.write(podcast_info["podcast_guest_extra_summary"])
 
         # Display the five key moments
         st.subheader("Key Moments")
@@ -105,6 +105,9 @@ def main():
         for moment in key_moments.split('\n'):
             st.markdown(
                 f"<p style='margin-bottom: 5px;'>{moment}</p>", unsafe_allow_html=True)
+
+        st.subheader("Key Topics")
+        st.write(podcast_info["podcast_highlights_topics"])
 
 def create_dict_from_json_files(folder_path):
     json_files = [f for f in os.listdir(folder_path) if f.endswith('.json')]
